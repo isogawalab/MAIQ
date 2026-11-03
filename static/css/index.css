@@ -948,17 +948,6 @@ pre {
   text-align: center;
 }
 
-.teaser-figure {
-  max-width: 760px;
-  margin: 0 auto 1.25rem;
-}
-
-.teaser-figure img {
-  display: block;
-  width: 100%;
-  border-radius: var(--border-radius);
-}
-
 .wide-figure {
   max-width: 900px;
   margin: 1.5rem auto 0;
