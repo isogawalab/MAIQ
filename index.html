@@ -3,318 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
-  <meta name="description" content="MAIQ extends MLLM-based image quality assessment with explicit inpainting-mask conditioning to predict perceptual quality of inpainted images without a reference.">
-  <meta name="keywords" content="image inpainting, image quality assessment, no-reference IQA, MLLM, mask-aware, NIQAD">
-  <meta name="author" content="Yota Koshimoto, Taiki Uchiyama, Mariko Isogawa">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="MAIQ">
-  <meta property="og:title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
-  <meta property="og:description" content="Mask-aware MLLM-based quality assessment for inpainted images, evaluated on the human-rated NIQAD benchmark.">
-  <meta property="og:url" content="https://isogawalab.github.io/MAIQ/">
-  <meta property="og:image" content="https://isogawalab.github.io/MAIQ/static/images/architecture.png">
-  <meta property="og:image:alt" content="Architecture of MAIQ">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="image inpainting">
-  <meta property="article:tag" content="image quality assessment">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
-  <meta name="twitter:description" content="Mask-aware MLLM-based quality assessment for inpainted images, evaluated on the human-rated NIQAD benchmark.">
-  <meta name="twitter:image" content="https://isogawalab.github.io/MAIQ/static/images/architecture.png">
-  <meta name="twitter:image:alt" content="Architecture of MAIQ">
-
-  <meta name="citation_title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
-  <meta name="citation_author" content="Koshimoto, Yota">
-  <meta name="citation_author" content="Uchiyama, Taiki">
-  <meta name="citation_author" content="Isogawa, Mariko">
-  <meta name="citation_publication_date" content="2027">
-  <meta name="citation_conference_title" content="WACV 2027">
-  <meta name="theme-color" content="#125a55">
-
   <title>MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting | WACV 2027</title>
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  </noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting",
-    "description": "MAIQ extends MLLM-based image quality assessment with explicit inpainting-mask conditioning to predict perceptual quality of inpainted images without a reference.",
-    "author": [
-      {"@type": "Person", "name": "Yota Koshimoto", "affiliation": {"@type": "Organization", "name": "Keio University"}},
-      {"@type": "Person", "name": "Taiki Uchiyama", "affiliation": {"@type": "Organization", "name": "Keio University"}},
-      {"@type": "Person", "name": "Mariko Isogawa", "affiliation": {"@type": "Organization", "name": "Keio University"}}
-    ],
-    "datePublished": "2027",
-    "publisher": {"@type": "Organization", "name": "WACV 2027"},
-    "url": "https://isogawalab.github.io/MAIQ/",
-    "image": "https://isogawalab.github.io/MAIQ/static/images/architecture.png",
-    "keywords": ["image inpainting", "image quality assessment", "no-reference IQA", "MLLM"],
-    "isAccessibleForFree": true
-  }
-  </script>
+  <meta name="description" content="MAIQ extends MLLM-based image quality assessment with explicit inpainting-mask conditioning to predict the perceptual quality of inpainted images without a reference.">
+  <meta name="theme-color" content="#1f5f8b">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
+  <meta property="og:description" content="MAIQ extends MLLM-based image quality assessment with explicit inpainting-mask conditioning to predict the perceptual quality of inpainted images without a reference.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting">
+  <meta property="og:url" content="https://isogawalab.github.io/MAIQ/">
+  <meta property="og:image" content="https://isogawalab.github.io/MAIQ/assets/images/architecture.png">
+  <meta name="citation_author" content="Yota Koshimoto">
+  <meta name="citation_author" content="Taiki Uchiyama">
+  <meta name="citation_author" content="Mariko Isogawa">
+  <meta name="citation_conference_title" content="WACV 2027">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>:root { --accent-base: #1f5f8b; }</style>
+  <script defer src="assets/site.js"></script>
 </head>
-<body>
-  <main id="main-content">
-    <section class="hero publication-header">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <p class="publication-venue">WACV 2027</p>
-              <h1 class="title is-1 publication-title">
-                MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting
-              </h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">Yota Koshimoto</span>
-                <span class="author-block">Taiki Uchiyama</span>
-                <span class="author-block">Mariko Isogawa</span>
-              </div>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">Keio University, Yokohama, Japan</span>
-              </div>
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="#Citation" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-quote-right"></i></span>
-                    <span>Citation</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Image inpainting aims to restore or modify missing regions in images, but evaluating the perceptual quality of inpainted results remains challenging because valid completions can be diverse and a unique ground-truth reference is often unavailable in practical scenarios. Existing no-reference IQA and MLLM-based IQA methods provide promising alternatives, but they are generally designed for global image quality and lack explicit awareness of the restored region.
-              </p>
-              <p>
-                To address this limitation, we propose MAIQ, a mask-aware framework for no-reference inpainting quality assessment. MAIQ extends MLLM-based IQA by using the inpainting mask as spatial guidance, combining token-level visual modulation with region-level consistency modeling between the restored region and its surrounding context. Experiments on NIQAD, a human-rated benchmark of 8,000 images generated by diverse inpainting methods, show that MAIQ achieves stronger correlation with human perceptual judgments than representative NR-IQA, object erasure, and reasoning-based IQA baselines.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Method</h2>
-        <figure class="wide-figure">
-          <img src="static/images/architecture.png" alt="Architecture of MAIQ" loading="lazy">
-          <figcaption>
-            The inpainted image is encoded into visual tokens and the binary mask is converted into token-level guidance. Mask-aware visual tokens are passed to the MLLM with text instructions to predict a perceptual quality score.
-          </figcaption>
-        </figure>
-        <div class="columns method-grid">
-          <div class="column">
-            <div class="method-item">
-              <h3 class="title is-5">1. Visual Mask Adapter</h3>
-              <p>The token-level mask is mapped to token-wise FiLM scale and shift parameters. Unlike hard masking, background tokens are preserved, so the model keeps full-image context while learning which features matter for the restored region.</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="method-item">
-              <h3 class="title is-5">2. Region-Consistency Module</h3>
-              <p>Channel-wise means and standard deviations of tokens inside and outside the mask form an inner-outer descriptor, which is projected to region-level FiLM parameters applied only to restored-region tokens.</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="method-item">
-              <h3 class="title is-5">3. Reasoning & Rewards</h3>
-              <p>Built on VisualQuality-R1-7B, MAIQ outputs a reasoning trace and a score. GRPO-style training combines format, differential ranking, and absolute-score rewards, with LoRA on the LLM decoder.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">NIQAD Dataset</h2>
-        <div class="columns result-grid">
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">8,000</p>
-              <p class="result-label">Images: 1,000 COCO originals and 7,000 inpainted results</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">7</p>
-              <p class="result-label">Inpainting methods, from GAN-based to diffusion-based</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">40,000</p>
-              <p class="result-label">Ratings from 167 annotators, five per image</p>
-            </div>
-          </div>
-        </div>
-        <div class="content result-copy">
-          <p>
-            The Naturalness-based Inpainting Quality Assessment Dataset (NIQAD) masks COCO objects covering 5&ndash;20% of the image and inpaints them with MAT, EdgeConnect, LaMa, RePaint, PowerPaint, SD2-inpainting, and OmniPaint. Annotators rate perceptual naturalness as a standalone image on a 5-point scale.
-          </p>
-        </div>
-        <figure class="wide-figure">
-          <img src="static/images/niqad-stats.png" alt="MOS statistics of NIQAD: mean MOS per source, mask area ratio distribution, and overall MOS distribution" loading="lazy">
-          <figcaption>
-            Mean MOS for the original image and each inpainting method, the distribution of mask area ratios, and the overall MOS distribution.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section" id="results">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Results</h2>
-        <div class="columns result-grid">
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">0.758</p>
-              <p class="result-label">SRCC with human MOS on the NIQAD test set</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">+0.066</p>
-              <p class="result-label">SRCC gain over the strongest baseline (TOPIQ)</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="result-item">
-              <p class="result-number">0.665</p>
-              <p class="result-label">Zero-shot SRCC on CelebAMask-HQ inpainted images</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="result-table-wrap">
-          <table class="table is-fullwidth is-narrow result-table">
-            <thead>
-              <tr><th>Method</th><th class="num">SRCC &uarr;</th><th class="num">PLCC &uarr;</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>QualiCLIP</td><td class="num">0.456</td><td class="num">0.418</td></tr>
-              <tr><td>DBCNN</td><td class="num">0.639</td><td class="num">0.644</td></tr>
-              <tr><td>MANIQA</td><td class="num">0.677</td><td class="num">0.681</td></tr>
-              <tr><td>TOPIQ</td><td class="num">0.692</td><td class="num">0.693</td></tr>
-              <tr class="group-start"><td>Q-Align w/ original prompt</td><td class="num">0.545</td><td class="num">0.552</td></tr>
-              <tr><td>Q-Align w/ inpainting prompt</td><td class="num">0.558</td><td class="num">0.563</td></tr>
-              <tr><td>Q-Align w/ mask prompt</td><td class="num">0.570</td><td class="num">0.575</td></tr>
-              <tr><td>Q-Hawkeye</td><td class="num">0.290</td><td class="num">0.292</td></tr>
-              <tr><td>VisualQuality-R1 zero-shot</td><td class="num">0.354</td><td class="num">0.282</td></tr>
-              <tr><td>VisualQuality-R1</td><td class="num">0.604</td><td class="num">0.597</td></tr>
-              <tr class="group-start"><td>ReMOVE</td><td class="num">-0.082</td><td class="num">-0.085</td></tr>
-              <tr class="group-start is-ours"><td>MAIQ (Ours)</td><td class="num">0.758</td><td class="num">0.752</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">
-          Quantitative comparison on NIQAD. Trainable image-only baselines are re-trained on NIQAD.
-        </p>
-
-        <div class="result-table-wrap">
-          <table class="table is-fullwidth is-narrow result-table">
-            <thead>
-              <tr><th>Variant</th><th class="num">SRCC &uarr;</th><th class="num">PLCC &uarr;</th></tr>
-            </thead>
-            <tbody>
-              <tr class="is-ours"><td>MAIQ full</td><td class="num">0.758</td><td class="num">0.752</td></tr>
-              <tr><td>w/o Visual Mask Adapter</td><td class="num">0.692</td><td class="num">0.685</td></tr>
-              <tr><td>w/o Region-Consistency Module</td><td class="num">0.717</td><td class="num">0.708</td></tr>
-              <tr><td>w/o Abs reward</td><td class="num">0.746</td><td class="num">0.738</td></tr>
-              <tr><td>w/o Diff rank reward</td><td class="num">0.743</td><td class="num">0.751</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">
-          Ablation study. Removing the Visual Mask Adapter causes the largest drop, and both reward terms contribute.
-        </p>
-      </div>
-    </section>
-
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Qualitative Analysis</h2>
-        <figure class="wide-figure qualitative-figure">
-          <img src="static/images/qualitative.png" alt="Predicted scores and reasoning traces of VisualQuality-R1 and MAIQ for an inpainted image with human MOS 1.20" loading="lazy">
-          <figcaption>
-            For an inpainted image with human MOS 1.20, VisualQuality-R1 mistakes the restoration failure for a double-exposure effect (3.40 zero-shot, 2.00 after LoRA fine-tuning). MAIQ predicts 1.00 and identifies ghosting, structural distortion, and poor background integration. Green text marks correct region-aware observations; red text marks inappropriate reasoning.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section" id="Citation">
-      <div class="container is-max-desktop content">
-        <div class="citation-header">
-          <h2 class="title">Citation</h2>
-        </div>
-        <div class="citation-block">
-          <pre><code id="bibtex-code">@InProceedings{Koshimoto_MAIQ_WACV2027,
-  author = {Koshimoto, Yota AND Uchiyama, Taiki AND Isogawa, Mariko},
-  title = {{MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting}},
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap">
+      <h1>MAIQ: <span class="nowrap">Mask-Aware</span> <span class="nowrap">No-Reference</span> Image Quality Assessment for Inpainting</h1>
+      <ul class="authors"><li>Yota Koshimoto</li><li>Taiki Uchiyama</li><li>Mariko Isogawa</li></ul>
+      <div class="byline"><span class="venue">WACV 2027</span><ul class="affils"><li>Keio University, Yokohama, Japan</li></ul></div>
+      <ul class="links"><li><a class="button" href="#citation"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h4v4c0 3-1.5 5-4 6M15 7h4v4c0 3-1.5 5-4 6"/></svg><span>Citation</span></a></li></ul>
+      <p class="tldr">Inpainting quality is decided around the restored region. MAIQ tells a reasoning MLLM where that region is by modulating its visual tokens with the inpainting mask, and correlates with human judgments better than general NR-IQA, object-erasure, and reasoning-based IQA methods.</p>
+    </div>
+  </header>
+  <nav class="toc" aria-label="Sections">
+    <div class="wrap"><ul><li><a href="#abstract">Abstract</a></li><li><a href="#method">Method</a></li><li><a href="#dataset">NIQAD Dataset</a></li><li><a href="#results">Results</a></li><li><a href="#qualitative">Qualitative Example</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </nav>
+  <main id="main" class="wrap">
+    <section id="abstract" aria-labelledby="abstract-h"><h2 id="abstract-h">Abstract</h2><p>Image inpainting aims to restore or modify missing regions in images, but evaluating the perceptual quality of inpainted results remains challenging because valid completions can be diverse and a unique ground-truth reference is often unavailable in practical scenarios. Existing no-reference IQA and MLLM-based IQA methods provide promising alternatives, but they are generally designed for global image quality and lack explicit awareness of the restored region.</p><p>To address this limitation, we propose MAIQ, a mask-aware framework for no-reference inpainting quality assessment. MAIQ extends MLLM-based IQA by using the inpainting mask as spatial guidance, combining token-level visual modulation with region-level consistency modeling between the restored region and its surrounding context. Experiments on NIQAD, a human-rated benchmark of 8,000 images generated by diverse inpainting methods, show that MAIQ achieves stronger correlation with human perceptual judgments than representative NR-IQA, object erasure, and reasoning-based IQA baselines.</p></section><section id="method" aria-labelledby="method-h"><h2 id="method-h">Method</h2><figure class="figure figure--wide" id="fig-1"><img src="assets/images/architecture.png" alt="Architecture of MAIQ: the inpainted image is encoded into visual tokens, the mask is converted into token-level guidance, and two FiLM modules produce mask-aware tokens for the MLLM." loading="lazy" decoding="async"><figcaption><span class="label">Figure 1.</span> Architecture of MAIQ. The Visual Mask Adapter applies token-wise FiLM modulation, and the Region-Consistency Module derives region-level FiLM parameters from mask-separated inside/outside token statistics. The mask-aware visual tokens are passed to the MLLM with text instructions to predict a quality score.</figcaption></figure><p>MAIQ takes an inpainted image and its binary mask and predicts a score aligned with human Mean Opinion Score (MOS). The mask is resized to the vision encoder's token grid and injected into the visual representation before the MLLM reasons about quality.</p><dl class="terms"><div><dt>Visual Mask Adapter</dt><dd>Maps the token-level mask to token-wise FiLM scale and shift parameters. Unlike hard masking, background tokens are kept, so the model retains full-image context while learning which features matter for the restored region. The final projection is zero-initialized, so training starts from identity.</dd></div><div><dt>Region-Consistency Module</dt><dd>Computes channel-wise means and standard deviations of tokens inside and outside the mask, projects this inner&ndash;outer descriptor to region-level FiLM parameters, and applies them only to restored-region tokens.</dd></div><div><dt>Reasoning and rewards</dt><dd>Built on VisualQuality-R1-7B (Qwen2.5-VL). The model writes a reasoning trace in <code>&lt;think&gt;</code> tags and a score in <code>&lt;answer&gt;</code> tags. GRPO-style training combines a format reward, a differential ranking reward over MOS pairs, and an absolute-score reward, with LoRA on the LLM decoder.</dd></div></dl></section><section id="dataset" aria-labelledby="dataset-h"><h2 id="dataset-h">NIQAD Dataset</h2><p>The Naturalness-based Inpainting Quality Assessment Dataset (NIQAD) is built from 1,000 COCO images. For each, an object covering 5&ndash;20% of the image is masked, dilated to include its boundary, and inpainted by seven methods spanning GAN- and diffusion-based families. Annotators rate perceptual naturalness as a standalone image, not similarity to the original.</p><ul class="facts"><li><span class="fact-value">8,000</span> <span class="fact-label">images: 7,000 inpainted and 1,000 originals</span></li><li><span class="fact-value">7</span> <span class="fact-label">inpainting methods: MAT, EdgeConnect, LaMa, RePaint, PowerPaint, SD2-inpainting, OmniPaint</span></li><li><span class="fact-value">40,000</span> <span class="fact-label">ratings from 167 annotators, five per image on a 1&ndash;5 scale</span></li></ul><figure class="figure figure--wide" id="fig-2"><img src="assets/images/niqad-stats.png" alt="Bar chart of mean MOS per source, histogram of mask area ratio, and histogram of MOS in NIQAD." loading="lazy" decoding="async"><figcaption><span class="label">Figure 2.</span> MOS statistics of NIQAD: mean MOS for the original image and each inpainting method (error bars show the standard deviation of ratings), the distribution of mask area ratios, and the overall MOS distribution.</figcaption></figure></section><section id="results" aria-labelledby="results-h"><h2 id="results-h">Results</h2><p>On the NIQAD test split (800 images), MAIQ reaches <strong>0.758 SRCC</strong> and <strong>0.752 PLCC</strong> with human MOS, 0.066 SRCC above the strongest baseline, TOPIQ. Describing the mask in the prompt helps Q-Align only slightly, which suggests that prompt-level guidance alone is not enough without modulating the visual tokens.</p><figure class="table-figure" id="tab-1"><div class="table-scroll"><table><thead><tr><th scope="col">Method</th><th scope="col" class="num">SRCC</th><th scope="col" class="num">PLCC</th></tr></thead><tbody><tr class="group"><th colspan="3" scope="rowgroup">General NR-IQA</th></tr><tr><th scope="row">QualiCLIP</th><td class="num"><span class="bar" style="--w:57.0%" aria-hidden="true"></span>0.456</td><td class="num">0.418</td></tr><tr><th scope="row">DBCNN</th><td class="num"><span class="bar" style="--w:79.9%" aria-hidden="true"></span>0.639</td><td class="num">0.644</td></tr><tr><th scope="row">MANIQA</th><td class="num"><span class="bar" style="--w:84.6%" aria-hidden="true"></span>0.677</td><td class="num">0.681</td></tr><tr><th scope="row">TOPIQ</th><td class="num"><span class="bar" style="--w:86.5%" aria-hidden="true"></span>0.692</td><td class="num">0.693</td></tr></tbody><tbody><tr class="group"><th colspan="3" scope="rowgroup">MLLM-based IQA</th></tr><tr><th scope="row">Q-Align, original prompt</th><td class="num"><span class="bar" style="--w:68.1%" aria-hidden="true"></span>0.545</td><td class="num">0.552</td></tr><tr><th scope="row">Q-Align, inpainting prompt</th><td class="num"><span class="bar" style="--w:69.8%" aria-hidden="true"></span>0.558</td><td class="num">0.563</td></tr><tr><th scope="row">Q-Align, mask prompt</th><td class="num"><span class="bar" style="--w:71.2%" aria-hidden="true"></span>0.570</td><td class="num">0.575</td></tr><tr><th scope="row">Q-Hawkeye</th><td class="num"><span class="bar" style="--w:36.2%" aria-hidden="true"></span>0.290</td><td class="num">0.292</td></tr><tr><th scope="row">VisualQuality-R1, zero-shot</th><td class="num"><span class="bar" style="--w:44.2%" aria-hidden="true"></span>0.354</td><td class="num">0.282</td></tr><tr><th scope="row">VisualQuality-R1, fine-tuned</th><td class="num"><span class="bar" style="--w:75.5%" aria-hidden="true"></span>0.604</td><td class="num">0.597</td></tr></tbody><tbody><tr class="group"><th colspan="3" scope="rowgroup">Object erasure</th></tr><tr><th scope="row">ReMOVE</th><td class="num"><span class="bar" style="--w:0.0%" aria-hidden="true"></span>&minus;0.082</td><td class="num">&minus;0.085</td></tr></tbody><tbody class="is-highlight"><tr><th scope="row">MAIQ (ours)</th><td class="num"><span class="bar" style="--w:94.8%" aria-hidden="true"></span>0.758</td><td class="num">0.752</td></tr></tbody></table></div><figcaption><span class="label">Table 1.</span> Comparison on the NIQAD test set. Trainable image-only baselines are re-trained on NIQAD.</figcaption></figure><figure class="table-figure" id="tab-2"><div class="table-scroll"><table><thead><tr><th scope="col">Variant</th><th scope="col" class="num">SRCC</th><th scope="col" class="num">PLCC</th></tr></thead><tbody class="is-highlight"><tr><th scope="row">MAIQ full</th><td class="num"><span class="bar" style="--w:94.8%" aria-hidden="true"></span>0.758</td><td class="num">0.752</td></tr></tbody><tbody><tr><th scope="row">without Visual Mask Adapter</th><td class="num"><span class="bar" style="--w:86.5%" aria-hidden="true"></span>0.692</td><td class="num">0.685</td></tr><tr><th scope="row">without Region-Consistency Module</th><td class="num"><span class="bar" style="--w:89.6%" aria-hidden="true"></span>0.717</td><td class="num">0.708</td></tr><tr><th scope="row">without absolute-score reward</th><td class="num"><span class="bar" style="--w:93.2%" aria-hidden="true"></span>0.746</td><td class="num">0.738</td></tr><tr><th scope="row">without differential ranking reward</th><td class="num"><span class="bar" style="--w:92.9%" aria-hidden="true"></span>0.743</td><td class="num">0.751</td></tr></tbody></table></div><figcaption><span class="label">Table 2.</span> Ablation. Removing the Visual Mask Adapter costs the most; both reward terms contribute.</figcaption></figure><p>MAIQ also generalizes: leave-one-generator-out evaluation gives a mean per-generator SRCC/PLCC of 0.560/0.563 (0.579/0.594 with all generators), and zero-shot evaluation on 700 inpainted CelebAMask-HQ images reaches 0.665/0.651.</p></section><section id="qualitative" aria-labelledby="qualitative-h"><h2 id="qualitative-h">Qualitative Example</h2><figure class="figure figure--narrow" id="fig-3"><img src="assets/images/qualitative.png" alt="An inpainted skateboarding image with human MOS 1.20 and the reasoning traces of VisualQuality-R1 without and with LoRA, and of MAIQ." loading="lazy" decoding="async"><figcaption><span class="label">Figure 3.</span> An inpainted image with human MOS 1.20. VisualQuality-R1 reads the restoration failure as a double-exposure effect and scores 3.40 zero-shot and 2.00 after LoRA fine-tuning. MAIQ scores 1.00 and names ghosting, structural distortion, and poor background integration. Green text marks correct region-aware observations; red marks inappropriate reasoning.</figcaption></figure></section><section id="citation" aria-labelledby="citation-h"><h2 id="citation-h">Citation</h2><div class="bibtex"><pre><code id="bibtex">@InProceedings{Koshimoto_MAIQ_WACV2027,
+  author    = {Koshimoto, Yota and Uchiyama, Taiki and Isogawa, Mariko},
+  title     = {{MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting}},
   booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year = {2027}
-}</code></pre>
-          <p class="has-text-centered">
-            <button class="copy-bibtex-btn button is-small is-rounded" type="button" onclick="copyBibTeX()">
-              <span class="icon"><i class="fas fa-copy"></i></span>
-              <span class="copy-text">Copy</span>
-            </button>
-          </p>
-        </div>
-      </div>
-    </section>
+  year      = {2027}
+}</code></pre><button type="button" class="copy" data-copy="bibtex"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy BibTeX</span></button></div></section>
   </main>
-
   <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content has-text-centered">
-            <p>
-              This page was built using the
-              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
-              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="wrap">
+      <p>MAIQ: Mask-Aware No-Reference Image Quality Assessment for Inpainting</p>
+      <p><a href="#top">Back to top</a></p>
     </div>
   </footer>
-
-  <script>
-    function copyBibTeX() {
-      const code = document.getElementById('bibtex-code');
-      const label = document.querySelector('.copy-bibtex-btn .copy-text');
-      navigator.clipboard.writeText(code.textContent).then(function() {
-        label.textContent = 'Copied';
-        setTimeout(function() { label.textContent = 'Copy'; }, 2000);
-      });
-    }
-  </script>
 </body>
 </html>
